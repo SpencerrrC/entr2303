@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eleveno Corporate Events</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">ELEVENO</a>
+      <ul class="nav-links">
+        <li><a href="#event-options">Event Options</a></li>
+        <li><a href="#accessibility">Accessibility</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#book" class="nav-cta">Book Now</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="#event-options">Event Options</a></li>
+      <li><a href="#accessibility">Accessibility</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#book" class="nav-cta">Book Now</a></li>
+    </ul>
+  </div>
+
+  <!-- PICKLEBALL COURT SECTION -->
+  <section class="court-section">
+    <div class="court-wrapper">
+      <div class="court">
+        <!-- Court lines -->
+        <div class="court-line court-line-horizontal"></div>
+        <div class="court-line court-line-vertical"></div>
+        <div class="court-net"></div>
+
+        <!-- Top-left: Menu -->
+        <div class="court-quadrant quadrant-tl" data-quadrant="menu">
+          <span class="quadrant-label">Menu</span>
+        </div>
+
+        <!-- Top-right: Event Options -->
+        <div class="court-quadrant quadrant-tr" data-quadrant="event-options">
+          <span class="quadrant-label">Event Options</span>
+        </div>
+
+        <!-- Center net area with logo -->
+        <div class="court-center">
+          <span class="court-logo">ELEVENO</span>
+        </div>
+
+        <!-- Bottom-left: Book Now -->
+        <div class="court-quadrant quadrant-bl" data-quadrant="book">
+          <span class="quadrant-label">Book Now</span>
+        </div>
+
+        <!-- Bottom-right: Accessibility -->
+        <div class="court-quadrant quadrant-br" data-quadrant="accessibility">
+          <span class="quadrant-label">Accessibility</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPUP OVERLAY -->
+  <div class="popup-overlay" id="popup-overlay">
+    <div class="popup" id="popup">
+      <button class="popup-close" id="popup-close">&times;</button>
+      <div class="popup-content" id="popup-content"></div>
+    </div>
+  </div>
+
+  <!-- Hidden popup content for each quadrant -->
+  <div id="content-menu" class="popup-data" hidden>
+    <h2>[Menu Content]</h2>
+    <p>[Your menu content here]</p>
+  </div>
+
+  <div id="content-event-options" class="popup-data" hidden>
+    <h2>[Event Options]</h2>
+    <p>[Your event options content here]</p>
+  </div>
+
+  <div id="content-book" class="popup-data" hidden>
+    <h2>[Book an Appointment]</h2>
+    <p>[Your booking content here]</p>
+  </div>
+
+  <div id="content-accessibility" class="popup-data" hidden>
+    <h2>[Accessibility]</h2>
+    <p>[Your accessibility content here]</p>
+  </div>
+
+  <!-- PRICING -->
+  <section id="pricing" class="section pricing">
+    <div class="container">
+      <h2 class="section-heading">[Pricing]</h2>
+      <p class="section-description">[Pricing overview text]</p>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>[Tier 1 Name]</h3>
+          <div class="price">[$ Price]</div>
+          <ul>
+            <li>[Feature 1]</li>
+            <li>[Feature 2]</li>
+            <li>[Feature 3]</li>
+          </ul>
+          <a href="#book" class="btn btn-secondary">Book Now</a>
+        </div>
+        <div class="pricing-card featured">
+          <h3>[Tier 2 Name]</h3>
+          <div class="price">[$ Price]</div>
+          <ul>
+            <li>[Feature 1]</li>
+            <li>[Feature 2]</li>
+            <li>[Feature 3]</li>
+          </ul>
+          <a href="#book" class="btn btn-primary">Book Now</a>
+        </div>
+        <div class="pricing-card">
+          <h3>[Tier 3 Name]</h3>
+          <div class="price">[$ Price]</div>
+          <ul>
+            <li>[Feature 1]</li>
+            <li>[Feature 2]</li>
+            <li>[Feature 3]</li>
+          </ul>
+          <a href="#book" class="btn btn-secondary">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="footer-logo">ELEVENO</span>
+        <p>[Footer tagline or address]</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">[Link 1]</a>
+        <a href="#">[Link 2]</a>
+        <a href="#">[Link 3]</a>
+      </div>
+      <div class="footer-legal">
+        <p>&copy; 2026 Eleveno. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

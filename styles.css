@@ -1,0 +1,612 @@
+/* ===========================
+   ELEVENO Corporate Landing Page
+   Color scheme & fonts from eleveno.com
+   =========================== */
+
+:root {
+  --blue-100: #001631;
+  --blue-80: #132c58;
+  --blue-70: #093469;
+  --blue-60: #3c5c84;
+  --blue-50: #4c9eea;
+  --blue-40: #88bbdd;
+  --yellow-100: #fbc14a;
+  --white: #ffffff;
+  --gray-10: #f9f9f9;
+  --gray-20: #f4f4f4;
+  --court-dark: #132c58;
+  --court-light: #4c9eea;
+  --court-green: #2e7d32;
+}
+
+/* RESET */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: var(--blue-80);
+  background: var(--white);
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* UTILITY */
+.container {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-bottom: 2.5rem;
+  max-width: 40rem;
+}
+
+/* ===========================
+   BUTTONS
+   =========================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 1rem 2rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-radius: 100vw;
+  border: 0.125rem solid;
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--blue-50);
+  border-color: var(--yellow-100);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--blue-60);
+}
+
+.btn-secondary {
+  background: var(--white);
+  border-color: var(--blue-80);
+  color: var(--blue-80);
+}
+
+.btn-secondary:hover {
+  background: var(--yellow-100);
+  border-color: var(--yellow-100);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* ===========================
+   NAVBAR
+   =========================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--blue-80);
+}
+
+.nav-container {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.5rem;
+}
+
+.nav-logo {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--yellow-100);
+}
+
+.nav-links .nav-cta {
+  background: var(--blue-50);
+  border: 0.125rem solid var(--yellow-100);
+  padding: 0.6rem 1.5rem;
+  border-radius: 100vw;
+  font-weight: 700;
+}
+
+.nav-links .nav-cta:hover {
+  background: var(--blue-60);
+}
+
+/* Hamburger */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 4.5rem;
+  left: 0;
+  width: 100%;
+  background: var(--blue-80);
+  z-index: 999;
+  padding: 1rem 5%;
+}
+
+.mobile-menu.open {
+  display: block;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.mobile-menu a:hover {
+  color: var(--yellow-100);
+}
+
+/* ===========================
+   PICKLEBALL COURT
+   =========================== */
+.court-section {
+  margin-top: 4.5rem;
+  background: var(--court-green);
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+}
+
+.court-wrapper {
+  width: 100%;
+  max-width: 800px;
+}
+
+.court {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto 1fr;
+  border: 4px solid var(--white);
+  aspect-ratio: 44 / 20;
+}
+
+/* Quadrants */
+.court-quadrant {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--court-dark);
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid var(--white);
+  transition: background-color 0.3s ease;
+}
+
+.court-quadrant:hover {
+  background: var(--blue-70);
+}
+
+.quadrant-label {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  padding: 1rem;
+}
+
+.court-quadrant:hover .quadrant-label {
+  opacity: 1;
+}
+
+/* Top-left */
+.quadrant-tl {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* Top-right */
+.quadrant-tr {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* Bottom-left */
+.quadrant-bl {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+/* Bottom-right */
+.quadrant-br {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+/* Center net strip */
+.court-center {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  background: var(--court-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  border: 2px solid var(--white);
+  position: relative;
+}
+
+/* Net dashed line */
+.court-center::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--white) 0,
+    var(--white) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  transform: translateY(-50%);
+}
+
+.court-logo {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ===========================
+   POPUP
+   =========================== */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 22, 49, 0.7);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-overlay.active {
+  display: flex;
+}
+
+.popup {
+  background: var(--white);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.popup-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--blue-80);
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.popup-close:hover {
+  color: var(--blue-50);
+}
+
+.popup-content h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 1rem;
+  color: var(--blue-80);
+}
+
+.popup-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--blue-60);
+}
+
+/* ===========================
+   PRICING
+   =========================== */
+.pricing {
+  background: var(--white);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.pricing-card {
+  background: var(--gray-10);
+  border-radius: 2rem;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  border-color: var(--blue-50);
+}
+
+.pricing-card.featured {
+  background: var(--blue-80);
+  color: var(--white);
+  box-shadow: 10px 10px 0 0 var(--blue-100);
+  transform: scale(1.03);
+}
+
+.pricing-card.featured .price {
+  color: var(--yellow-100);
+}
+
+.pricing-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+.pricing-card .price {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  color: var(--blue-50);
+}
+
+.pricing-card ul {
+  list-style: none;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pricing-card ul li {
+  font-size: 1rem;
+  line-height: 1.4;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(19, 44, 88, 0.1);
+}
+
+.pricing-card.featured ul li {
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+.footer {
+  background: var(--blue-100);
+  color: var(--white);
+  padding: 3rem 0;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.footer-brand p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: var(--yellow-100);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.footer-links a:hover {
+  opacity: 0.7;
+}
+
+.footer-legal p {
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 1024px) {
+  .section-heading {
+    font-size: 2rem;
+  }
+
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricing-card.featured {
+    transform: none;
+  }
+
+  .court-logo {
+    font-size: 2rem;
+  }
+
+  .quadrant-label {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .court-section {
+    padding: 2rem 1rem;
+  }
+
+  .court-logo {
+    font-size: 1.5rem;
+  }
+
+  .quadrant-label {
+    font-size: 1rem;
+  }
+
+  .section-heading {
+    font-size: 1.75rem;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 28rem;
+    margin: 0 auto;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .popup {
+    padding: 2rem 1.5rem;
+  }
+}
