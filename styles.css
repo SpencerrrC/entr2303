@@ -131,7 +131,7 @@ body {
   padding: 0 5%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 4.5rem;
 }
 
@@ -144,119 +144,72 @@ body {
   text-transform: uppercase;
 }
 
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-  align-items: center;
-}
-
-.nav-links a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  transition: color 0.2s ease;
-}
-
-.nav-links a:hover {
-  color: var(--yellow-100);
-}
-
-.nav-links .nav-cta {
-  background: var(--blue-50);
-  border: 0.125rem solid var(--yellow-100);
-  padding: 0.6rem 1.5rem;
-  border-radius: 100vw;
-  font-weight: 700;
-}
-
-.nav-links .nav-cta:hover {
-  background: var(--blue-60);
-}
-
-/* Hamburger */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-}
-
-.menu-toggle span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--white);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Mobile menu */
-.mobile-menu {
-  display: none;
-  position: fixed;
-  top: 4.5rem;
-  left: 0;
-  width: 100%;
-  background: var(--blue-80);
-  z-index: 999;
-  padding: 1rem 5%;
-}
-
-.mobile-menu.open {
-  display: block;
-}
-
-.mobile-menu ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.mobile-menu a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-}
-
-.mobile-menu a:hover {
-  color: var(--yellow-100);
-}
-
 /* ===========================
-   PICKLEBALL COURT
+   HERO SECTION
    =========================== */
-.court-section {
+.hero-section {
   margin-top: 4.5rem;
   background: var(--court-green);
-  padding: 4rem 2rem;
+  min-height: calc(100vh - 4.5rem);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 90vh;
+  padding: 3rem 5%;
+}
+
+.hero-container {
+  max-width: 90rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
 }
 
 .court-wrapper {
   width: 100%;
   max-width: 600px;
+  justify-self: end;
+}
+
+/* Hero CTA */
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: var(--white);
+  max-width: 600px;
+}
+
+.hero-heading {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  color: var(--white);
+}
+
+.hero-caption {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--white);
+  opacity: 0.95;
+}
+
+.btn-hero {
+  align-self: flex-start;
+  font-size: 1.1rem;
+  padding: 1.25rem 2.5rem;
 }
 
 .court {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr auto 1fr;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 1fr 1fr;
   border: 4px solid var(--white);
-  aspect-ratio: 20 / 32;
+  aspect-ratio: 32 / 20;
 }
 
 /* Quadrants */
@@ -293,39 +246,39 @@ body {
   opacity: 1;
 }
 
-/* Top-left */
+/* Top-left (rotated from bottom-left) */
 .quadrant-tl {
   grid-column: 1;
   grid-row: 1;
 }
 
-/* Top-right */
+/* Top-right (rotated from top-left) */
 .quadrant-tr {
-  grid-column: 2;
+  grid-column: 3;
   grid-row: 1;
 }
 
-/* Bottom-left */
+/* Bottom-left (rotated from bottom-right) */
 .quadrant-bl {
   grid-column: 1;
-  grid-row: 3;
+  grid-row: 2;
 }
 
-/* Bottom-right */
+/* Bottom-right (rotated from top-right) */
 .quadrant-br {
-  grid-column: 2;
-  grid-row: 3;
+  grid-column: 3;
+  grid-row: 2;
 }
 
 /* Center net strip */
 .court-center {
-  grid-column: 1 / -1;
-  grid-row: 2;
+  grid-column: 2;
+  grid-row: 1 / -1;
   background: var(--court-light);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem 1rem;
+  padding: 1rem 1.5rem;
   border: 2px solid var(--white);
   position: relative;
 }
@@ -334,18 +287,18 @@ body {
 .court-center::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 2px;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
   background: repeating-linear-gradient(
-    90deg,
+    0deg,
     var(--white) 0,
     var(--white) 10px,
     transparent 10px,
     transparent 20px
   );
-  transform: translateY(-50%);
+  transform: translateX(-50%);
 }
 
 .court-logo {
@@ -358,6 +311,8 @@ body {
   position: relative;
   z-index: 1;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
 }
 
 /* ===========================
@@ -475,144 +430,17 @@ body {
   }
 }
 
-/* ===========================
-   PRICING
-   =========================== */
-.pricing {
-  background: var(--white);
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  align-items: start;
-}
-
-.pricing-card {
-  background: var(--gray-10);
-  border-radius: 2rem;
-  padding: 2.5rem 2rem;
-  text-align: center;
-  border: 2px solid transparent;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.pricing-card:hover {
-  border-color: var(--blue-50);
-}
-
-.pricing-card.featured {
-  background: var(--blue-80);
-  color: var(--white);
-  box-shadow: 10px 10px 0 0 var(--blue-100);
-  transform: scale(1.03);
-}
-
-.pricing-card.featured .price {
-  color: var(--yellow-100);
-}
-
-.pricing-card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  margin-bottom: 1rem;
-}
-
-.pricing-card .price {
-  font-size: 2.5rem;
-  font-weight: 900;
-  margin-bottom: 1.5rem;
-  color: var(--blue-50);
-}
-
-.pricing-card ul {
-  list-style: none;
-  margin-bottom: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.pricing-card ul li {
-  font-size: 1rem;
-  line-height: 1.4;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(19, 44, 88, 0.1);
-}
-
-.pricing-card.featured ul li {
-  border-bottom-color: rgba(255, 255, 255, 0.15);
-}
-
-/* ===========================
-   FOOTER
-   =========================== */
-.footer {
-  background: var(--blue-100);
-  color: var(--white);
-  padding: 3rem 0;
-}
-
-.footer-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.footer-logo {
-  font-size: 1.5rem;
-  font-weight: 900;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.footer-brand p {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  opacity: 0.7;
-}
-
-.footer-links {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.footer-links a {
-  color: var(--yellow-100);
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: opacity 0.2s ease;
-}
-
-.footer-links a:hover {
-  opacity: 0.7;
-}
-
-.footer-legal p {
-  font-size: 0.8rem;
-  opacity: 0.5;
-}
 
 /* ===========================
    RESPONSIVE
    =========================== */
 @media (max-width: 1024px) {
-  .section-heading {
-    font-size: 2rem;
+  .hero-heading {
+    font-size: 2.5rem;
   }
 
-  .pricing-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .pricing-card.featured {
-    transform: none;
+  .hero-caption {
+    font-size: 1.1rem;
   }
 
   .court-logo {
@@ -625,16 +453,35 @@ body {
 }
 
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
+  .hero-section {
+    padding: 2rem 5%;
   }
 
-  .menu-toggle {
-    display: flex;
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
-  .court-section {
-    padding: 2rem 1rem;
+  .court-wrapper {
+    justify-self: center;
+    max-width: 500px;
+  }
+
+  .hero-cta {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-heading {
+    font-size: 2rem;
+  }
+
+  .hero-caption {
+    font-size: 1rem;
+  }
+
+  .btn-hero {
+    align-self: center;
   }
 
   .court-logo {
@@ -643,21 +490,6 @@ body {
 
   .quadrant-label {
     font-size: 1rem;
-  }
-
-  .section-heading {
-    font-size: 1.75rem;
-  }
-
-  .pricing-grid {
-    grid-template-columns: 1fr;
-    max-width: 28rem;
-    margin: 0 auto;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
   }
 
   .popup {

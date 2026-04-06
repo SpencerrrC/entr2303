@@ -1,199 +1,165 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eleveno Corporate Events</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eleveno Corporate Events</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="nav-logo">ELEVENO</a>
+      </div>
+    </nav>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="#" class="nav-logo">ELEVENO</a>
-      <ul class="nav-links">
-        <li><a href="#event-options">Event Options</a></li>
-        <li><a href="#accessibility">Accessibility</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#book" class="nav-cta">Book Now</a></li>
-      </ul>
-      <button class="menu-toggle" aria-label="Open menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-container">
+        <!-- PICKLEBALL COURT -->
+        <div class="court-wrapper">
+          <div class="court">
+            <!-- Court lines -->
+            <div class="court-line court-line-horizontal"></div>
+            <div class="court-line court-line-vertical"></div>
+            <div class="court-net"></div>
 
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu">
-    <ul>
-      <li><a href="#event-options">Event Options</a></li>
-      <li><a href="#accessibility">Accessibility</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#book" class="nav-cta">Book Now</a></li>
-    </ul>
-  </div>
+            <!-- Top-left: Book Now (rotated from bottom-left) -->
+            <div class="court-quadrant quadrant-tl" data-quadrant="book">
+              <span class="quadrant-label">Book Now</span>
+            </div>
 
-  <!-- PICKLEBALL COURT SECTION -->
-  <section class="court-section">
-    <div class="court-wrapper">
-      <div class="court">
-        <!-- Court lines -->
-        <div class="court-line court-line-horizontal"></div>
-        <div class="court-line court-line-vertical"></div>
-        <div class="court-net"></div>
+            <!-- Top-right: Menu (rotated from top-left) -->
+            <div class="court-quadrant quadrant-tr" data-quadrant="menu">
+              <span class="quadrant-label">Menu</span>
+            </div>
 
-        <!-- Top-left: Menu -->
-        <div class="court-quadrant quadrant-tl" data-quadrant="menu">
-          <span class="quadrant-label">Menu</span>
+            <!-- Center net area with logo -->
+            <div class="court-center">
+              <span class="court-logo">ELEVENO</span>
+            </div>
+
+            <!-- Bottom-left: Accessibility (rotated from bottom-right) -->
+            <div
+              class="court-quadrant quadrant-bl"
+              data-quadrant="accessibility"
+            >
+              <span class="quadrant-label">Accessibility</span>
+            </div>
+
+            <!-- Bottom-right: Event Options (rotated from top-right) -->
+            <div
+              class="court-quadrant quadrant-br"
+              data-quadrant="event-options"
+            >
+              <span class="quadrant-label">Event Options</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Top-right: Event Options -->
-        <div class="court-quadrant quadrant-tr" data-quadrant="event-options">
-          <span class="quadrant-label">Event Options</span>
+        <!-- CTA CONTENT -->
+        <div class="hero-cta">
+          <h1 class="hero-heading">Elevate Your Corporate Events</h1>
+          <p class="hero-caption">
+            Ditch the boring team dinner. Pickleball courts, lawn games, craft
+            cocktails, and space for up to 500 - all under one roof at Patriot
+            Place. Plan a team event they'll actually talk about.
+          </p>
+          <a href="#book" class="btn btn-primary btn-hero">Book Your Event</a>
         </div>
+      </div>
+    </section>
 
-        <!-- Center net area with logo -->
-        <div class="court-center">
-          <span class="court-logo">ELEVENO</span>
-        </div>
-
-        <!-- Bottom-left: Book Now -->
-        <div class="court-quadrant quadrant-bl" data-quadrant="book">
-          <span class="quadrant-label">Book Now</span>
-        </div>
-
-        <!-- Bottom-right: Accessibility -->
-        <div class="court-quadrant quadrant-br" data-quadrant="accessibility">
-          <span class="quadrant-label">Accessibility</span>
-        </div>
+    <!-- POPUP OVERLAY -->
+    <div class="popup-overlay" id="popup-overlay">
+      <div class="popup" id="popup">
+        <button class="popup-close" id="popup-close">&times;</button>
+        <div class="popup-content" id="popup-content"></div>
       </div>
     </div>
-  </section>
 
-  <!-- POPUP OVERLAY -->
-  <div class="popup-overlay" id="popup-overlay">
-    <div class="popup" id="popup">
-      <button class="popup-close" id="popup-close">&times;</button>
-      <div class="popup-content" id="popup-content"></div>
-    </div>
-  </div>
-
-  <!-- Hidden popup content for each quadrant -->
-  <div id="content-menu" class="popup-data" hidden>
-    <div class="menu-grid">
-      <div class="menu-cell">
-        <h3>Food Packages</h3>
-        <p>ELEVENO offers four food packages:</p>
-        <ul>
-          <li><strong>BASELINE</strong> ($30/pp)</li>
-          <li><strong>MID-COURT</strong> ($40/pp)</li>
-          <li><strong>THE ELEVENO</strong> ($50pp)</li>
-          <li><strong>MORNING SERVE</strong> ($25/pp)</li>
-        </ul>
-        <p class="menu-note">All include Appetizers, Handhelds, Flatbreads, and Dips, replenished for two hours.</p>
-      </div>
-      <div class="menu-cell">
-        <h3>Beverage Packages</h3>
-        <p>Three packages are available:</p>
-        <ul>
-          <li><strong>THE COURTSIDE</strong> (starting at $25/2hrs)</li>
-          <li><strong>THE MATCH POINT</strong> (starting at $35/2hrs) with House Spirits</li>
-          <li><strong>THE CHAMPIONSHIP</strong> (starting at $45/2hrs) with Premium Spirits.</li>
-        </ul>
-        <p class="menu-note">Drink tickets or consumption bar also available</p>
-      </div>
-      <div class="menu-cell">
-        <h3>Upgrades / Add-Ons</h3>
-        <p>Enhance with food like a Signature Salad Bar, Charcuterie &amp; Cheese Board, and New England Seafood Tower.</p>
-        <p>Drink Add-Ons include Custom Welcome Cocktails/Mocktails and a Mobile Courtside Bar.</p>
-      </div>
-      <div class="menu-cell">
-        <h3>Event Enhancements</h3>
-        <p>Customize your event (Inquire for Pricing). Options include Half Center Court Bar or Full Venue Rental.</p>
-        <p>Pickleball additions include a Coach/Host, Tournament Support, and Branded Paddles or Custom Trophies.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="content-event-options" class="popup-data" hidden>
-    <h2>[Event Options]</h2>
-    <p>[Your event options content here]</p>
-  </div>
-
-  <div id="content-book" class="popup-data" hidden>
-    <h2>[Book an Appointment]</h2>
-    <p>[Your booking content here]</p>
-  </div>
-
-  <div id="content-accessibility" class="popup-data" hidden>
-    <h2>[Accessibility]</h2>
-    <p>[Your accessibility content here]</p>
-  </div>
-
-  <!-- PRICING -->
-  <section id="pricing" class="section pricing">
-    <div class="container">
-      <h2 class="section-heading">[Pricing]</h2>
-      <p class="section-description">[Pricing overview text]</p>
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <h3>[Tier 1 Name]</h3>
-          <div class="price">[$ Price]</div>
+    <!-- Hidden popup content for each quadrant -->
+    <div id="content-menu" class="popup-data" hidden>
+      <div class="menu-grid">
+        <div class="menu-cell">
+          <h3>Food Packages</h3>
+          <p>ELEVENO offers four food packages:</p>
           <ul>
-            <li>[Feature 1]</li>
-            <li>[Feature 2]</li>
-            <li>[Feature 3]</li>
+            <li><strong>BASELINE</strong> ($30/pp)</li>
+            <li><strong>MID-COURT</strong> ($40/pp)</li>
+            <li><strong>THE ELEVENO</strong> ($50pp)</li>
+            <li><strong>MORNING SERVE</strong> ($25/pp)</li>
           </ul>
-          <a href="#book" class="btn btn-secondary">Book Now</a>
+          <p class="menu-note">
+            All include Appetizers, Handhelds, Flatbreads, and Dips, replenished
+            for two hours.
+          </p>
         </div>
-        <div class="pricing-card featured">
-          <h3>[Tier 2 Name]</h3>
-          <div class="price">[$ Price]</div>
+        <div class="menu-cell">
+          <h3>Beverage Packages</h3>
+          <p>Three packages are available:</p>
           <ul>
-            <li>[Feature 1]</li>
-            <li>[Feature 2]</li>
-            <li>[Feature 3]</li>
+            <li><strong>THE COURTSIDE</strong> (starting at $25/2hrs)</li>
+            <li>
+              <strong>THE MATCH POINT</strong> (starting at $35/2hrs) with House
+              Spirits
+            </li>
+            <li>
+              <strong>THE CHAMPIONSHIP</strong> (starting at $45/2hrs) with
+              Premium Spirits.
+            </li>
           </ul>
-          <a href="#book" class="btn btn-primary">Book Now</a>
+          <p class="menu-note">
+            Drink tickets or consumption bar also available
+          </p>
         </div>
-        <div class="pricing-card">
-          <h3>[Tier 3 Name]</h3>
-          <div class="price">[$ Price]</div>
-          <ul>
-            <li>[Feature 1]</li>
-            <li>[Feature 2]</li>
-            <li>[Feature 3]</li>
-          </ul>
-          <a href="#book" class="btn btn-secondary">Book Now</a>
+        <div class="menu-cell">
+          <h3>Upgrades / Add-Ons</h3>
+          <p>
+            Enhance with food like a Signature Salad Bar, Charcuterie &amp;
+            Cheese Board, and New England Seafood Tower.
+          </p>
+          <p>
+            Drink Add-Ons include Custom Welcome Cocktails/Mocktails and a
+            Mobile Courtside Bar.
+          </p>
+        </div>
+        <div class="menu-cell">
+          <h3>Event Enhancements</h3>
+          <p>
+            Customize your event (Inquire for Pricing). Options include Half
+            Center Court Bar or Full Venue Rental.
+          </p>
+          <p>
+            Pickleball additions include a Coach/Host, Tournament Support, and
+            Branded Paddles or Custom Trophies.
+          </p>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-brand">
-        <span class="footer-logo">ELEVENO</span>
-        <p>[Footer tagline or address]</p>
-      </div>
-      <div class="footer-links">
-        <a href="#">[Link 1]</a>
-        <a href="#">[Link 2]</a>
-        <a href="#">[Link 3]</a>
-      </div>
-      <div class="footer-legal">
-        <p>&copy; 2026 Eleveno. All rights reserved.</p>
-      </div>
+    <div id="content-event-options" class="popup-data" hidden>
+      <h2>[Event Options]</h2>
+      <p>[Your event options content here]</p>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
-</body>
+    <div id="content-book" class="popup-data" hidden>
+      <h2>[Book an Appointment]</h2>
+      <p>[Your booking content here]</p>
+    </div>
+
+    <div id="content-accessibility" class="popup-data" hidden>
+      <h2>[Accessibility]</h2>
+      <p>[Your accessibility content here]</p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
